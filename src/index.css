@@ -117,10 +117,21 @@
   body {
     @apply bg-background text-foreground font-inter;
     background-image: var(--gradient-starfield);
+    cursor: url('/src/assets/spaceship-cursor.png') 32 32, auto;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-orbitron;
+  }
+
+  /* Custom cursor for interactive elements */
+  button, a, [role="button"], .cursor-pointer {
+    cursor: url('/src/assets/spaceship-cursor.png') 32 32, pointer;
+  }
+
+  /* Hover states with spaceship cursor */
+  button:hover, a:hover, [role="button"]:hover {
+    cursor: url('/src/assets/spaceship-cursor.png') 32 32, pointer;
   }
 }
 
