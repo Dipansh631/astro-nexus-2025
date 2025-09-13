@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin } from "lucide-react";
+import supernovaBackground from "@/assets/supernova-bg.jpg";
 
 const ContactSection = () => {
   const contactInfo = [
@@ -24,8 +25,22 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 relative overflow-hidden">
+      {/* Supernova Background */}
+      <div 
+        className="absolute inset-0 opacity-15 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${supernovaBackground})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/75 to-background/85"></div>
+      </div>
+      
+      {/* Explosive cosmic energy effects */}
+      <div className="absolute top-20 left-1/4 w-10 h-10 bg-gradient-cosmic rounded-full opacity-20 animate-pulse" style={{ animationDuration: '3s' }}></div>
+      <div className="absolute top-1/3 right-1/5 w-6 h-6 bg-secondary rounded-full opacity-30 animate-ping" style={{ animationDuration: '4s' }}></div>
+      <div className="absolute bottom-1/4 left-16 w-8 h-8 bg-accent rounded-full opacity-25 animate-pulse" style={{ animationDuration: '2.5s' }}></div>
+      <div className="absolute bottom-16 right-1/3 w-4 h-4 bg-primary rounded-full opacity-40 animate-ping" style={{ animationDuration: '3.5s' }}></div>
+      <div className="absolute top-1/2 left-1/2 w-12 h-12 bg-gradient-cosmic rounded-full opacity-10 animate-spin" style={{ animationDuration: '25s' }}></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-foreground mb-6">
             Contact <span className="bg-gradient-cosmic bg-clip-text text-transparent">Us</span>

@@ -1,4 +1,5 @@
 import { Check, Plane, Home, Coffee } from "lucide-react";
+import starclusterBackground from "@/assets/starcluster-bg.jpg";
 
 const InfoSection = () => {
   const benefits = [
@@ -29,8 +30,23 @@ const InfoSection = () => {
   ];
 
   return (
-    <section id="info" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="info" className="py-20 relative overflow-hidden">
+      {/* Star Cluster Background */}
+      <div 
+        className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${starclusterBackground})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/90"></div>
+      </div>
+      
+      {/* Twinkling stars effect */}
+      <div className="absolute top-16 left-16 w-2 h-2 bg-primary rounded-full animate-ping"></div>
+      <div className="absolute top-32 right-32 w-1 h-1 bg-secondary rounded-full animate-pulse delay-300"></div>
+      <div className="absolute bottom-40 left-1/3 w-3 h-3 bg-accent rounded-full animate-ping delay-700"></div>
+      <div className="absolute bottom-24 right-1/5 w-2 h-2 bg-primary rounded-full animate-pulse delay-1000"></div>
+      <div className="absolute top-1/2 left-12 w-1 h-1 bg-secondary rounded-full animate-ping delay-500"></div>
+      <div className="absolute top-2/3 right-12 w-2 h-2 bg-accent rounded-full animate-pulse delay-200"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-foreground mb-6">
             Important <span className="bg-gradient-cosmic bg-clip-text text-transparent">Information</span>

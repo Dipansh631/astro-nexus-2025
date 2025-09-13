@@ -1,5 +1,6 @@
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
+import galaxyBackground from "@/assets/galaxy-bg.jpg";
 
 const SpeakersSection = () => {
   const speakers = [
@@ -36,8 +37,21 @@ const SpeakersSection = () => {
   ];
 
   return (
-    <section id="speakers" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="speakers" className="py-20 relative overflow-hidden">
+      {/* Galaxy Background */}
+      <div 
+        className="absolute inset-0 opacity-15 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${galaxyBackground})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/90"></div>
+      </div>
+      
+      {/* Animated cosmic particles */}
+      <div className="absolute top-10 left-1/4 w-6 h-6 bg-gradient-cosmic rounded-full opacity-40 floating"></div>
+      <div className="absolute top-1/3 right-10 w-3 h-3 bg-secondary rounded-full opacity-60 floating delay-1000"></div>
+      <div className="absolute bottom-1/4 left-20 w-4 h-4 bg-accent rounded-full opacity-50 floating delay-2000"></div>
+      <div className="absolute bottom-10 right-1/4 w-2 h-2 bg-primary rounded-full opacity-80 floating delay-500"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-foreground mb-6">
             Our Distinguished <span className="bg-gradient-cosmic bg-clip-text text-transparent">Speakers</span>

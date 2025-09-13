@@ -1,4 +1,5 @@
 import { Atom, Zap, Globe, Telescope } from "lucide-react";
+import wormholeBackground from "@/assets/wormhole-bg.jpg";
 
 const TopicsSection = () => {
   const topics = [
@@ -29,8 +30,21 @@ const TopicsSection = () => {
   ];
 
   return (
-    <section id="topics" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="topics" className="py-20 relative overflow-hidden">
+      {/* Wormhole Background */}
+      <div 
+        className="absolute inset-0 opacity-25 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${wormholeBackground})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/60 to-background/85"></div>
+      </div>
+      
+      {/* Swirling cosmic elements */}
+      <div className="absolute top-20 right-1/4 w-8 h-8 bg-gradient-cosmic rounded-full opacity-30 animate-spin" style={{ animationDuration: '20s' }}></div>
+      <div className="absolute bottom-1/3 left-10 w-5 h-5 bg-secondary rounded-full opacity-40 animate-ping"></div>
+      <div className="absolute top-1/2 right-20 w-3 h-3 bg-accent rounded-full opacity-60 animate-pulse"></div>
+      <div className="absolute bottom-20 left-1/3 w-6 h-6 bg-primary rounded-full opacity-35 animate-spin" style={{ animationDuration: '15s' }}></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-foreground mb-6">
             Topics to be <span className="bg-gradient-cosmic bg-clip-text text-transparent">Covered</span>

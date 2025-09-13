@@ -1,4 +1,5 @@
 import { GraduationCap, Users, Telescope } from "lucide-react";
+import nebulaBackground from "@/assets/nebula-bg.jpg";
 
 const AboutSection = () => {
   const features = [
@@ -20,8 +21,21 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 relative overflow-hidden">
+      {/* Background */}
+      <div 
+        className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${nebulaBackground})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/80"></div>
+      </div>
+      
+      {/* Floating cosmic elements */}
+      <div className="absolute top-20 left-10 w-4 h-4 bg-primary rounded-full opacity-60 animate-pulse"></div>
+      <div className="absolute top-40 right-20 w-2 h-2 bg-secondary rounded-full opacity-80 animate-pulse delay-1000"></div>
+      <div className="absolute bottom-32 left-1/4 w-3 h-3 bg-accent rounded-full opacity-70 animate-pulse delay-2000"></div>
+      <div className="absolute bottom-20 right-1/3 w-1 h-1 bg-primary rounded-full opacity-90 animate-pulse delay-500"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-foreground mb-6">
             About the <span className="bg-gradient-cosmic bg-clip-text text-transparent">Workshop</span>
